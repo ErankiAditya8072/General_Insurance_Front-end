@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="content">
+        <form [formGroup]="validateClaim" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+                <label for="reason" class="form-label">Reason</label>
+                <select class="form-select" aria-label="Default select example" formControlName="reason" id="reason"
+                    [(ngModel)]="claim.reason">
+                    <option value="accident">Accident</option>
+                    <option value="theft">Theft</option>
+                    <option value="natural">Natural Disaster</option>
+                    <option value="manmade">Man-made Disaster</option>
+                </select>
+                <div *ngIf="submitted && validateClaim.controls['reason'].errors" class="error">
+                    <div class="text-danger" *ngIf="validateClaim.controls['reason'].errors['required']">Reason is
+                        required</div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>

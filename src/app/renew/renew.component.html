@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="content">
+        <form [formGroup]="validateRenew" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+                <label for="reason" class="form-label">Duration in years:</label>
+                <select class="form-select" aria-label="Default select example" formControlName="duration" id="duration"
+                    >
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+
+                </select>
+                <div *ngIf="submitted && validateRenew.controls['duration'].errors" class="error">
+                    <div class="text-danger" *ngIf="validateRenew.controls['duration'].errors['required']">Reason is
+                        required</div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Get premium</button>
+            <div *ngIf="getPremium">
+                <div class="text" >Insurance value is <strong>Rs. {{result[1]}}</strong></div>
+                <div class="text" >Premium per year for {{duration}} year(s) is <strong>Rs. {{result[0]}}</strong></div>
+                <div class="text"> Total Premium: <strong>Rs. {{result[0]*duration}}</strong></div>
+                <button class="btn btn-outline-primary my-2" (click)="makePayment(result[0]*duration)">Make Payment</button>
+            </div>
+        </form>
+    </div>
+</div>
+

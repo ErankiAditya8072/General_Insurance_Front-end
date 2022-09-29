@@ -1,0 +1,13 @@
+.content{
+    margin-left: auto;
+    margin-right: auto;
+    width: 600px;
+    padding: 20px;
+    /* border: 1px solid #ced4da; */
+}
+
+@media(max-width:768px){
+    .content{
+        width: 85%;
+    }
+}

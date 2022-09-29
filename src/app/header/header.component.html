@@ -1,0 +1,45 @@
+<header>
+    <div class="container py-2">
+      <a routerLink="" routerLinkActive="active" id="branding" class="d-flex" style="text-decoration: none;">
+        <img src="../assets/logo.png" alt="Company Name" class="logo">
+        <div class="logo-text mx-2 my-1">
+          <h1 class="site-title">Vehicle Insure</h1>
+          <small class="description">Secure your Vehicle with us</small>
+        </div>
+      </a>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+  
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <!-- <li class="nav-item">
+              <a class="nav-link" routerLinkActive="active" routerLink="/about">About Us</a>
+            </li> -->
+            <li class="nav-item">
+              <a class="nav-link" routerLinkActive="active" routerLink="/insurance">Insurance Plans</a>
+            </li>
+            <li class="nav-item" *ngIf="this.storage.retrieve('isLoggedIn')">
+              <a class="nav-link" routerLinkActive="active" routerLink="/mypolicy" >My Policies</a>
+            </li>
+            <li class="nav-item" *ngIf="this.storage.retrieve('isLoggedIn')">
+              <a class="nav-link" routerLinkActive="active" routerLink="/myclaim" >My Claims</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLinkActive="active" routerLink="/premium" >Premium calculation</a>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link" routerLinkActive="active" routerLink="/contact" >Contact Us</a>
+            </li> -->
+          </ul>
+          <form class="d-flex">
+            <app-login></app-login>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </header>

@@ -1,0 +1,83 @@
+<app-header></app-header>
+<div class="container my-5">
+    <h2>Buy {{title}} Insurance for {{duration}} year(s)</h2>
+    <div class="container buy-form my-5">
+        <form [formGroup]="addVehicle" (ngSubmit)="onBuy()">
+            <div class="mb-3">
+                <label for="reg_no" class="form-label">Registration Number</label>
+                <input type="text" class="form-control" formControlName="reg_no" [(ngModel)]="vehicle.reg_no"
+                    id="reg_no">
+                <div *ngIf="submitted && addVehicle.controls['reg_no'].errors" class="error">
+                    <div class="text-danger" *ngIf="addVehicle.controls['reg_no'].errors['required']">Name is required</div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="model" class="form-label">Model</label>
+                <input type="text" class="form-control" formControlName="model" [(ngModel)]="vehicle.model" id="model">
+                <div *ngIf="submitted && addVehicle.controls['model'].errors" class="error">
+                    <div class="text-danger" *ngIf="addVehicle.controls['model'].errors['required']">model is required</div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="manf" class="form-label">Manufacturer</label>
+                <input type="text" class="form-control" formControlName="manf" [(ngModel)]="vehicle.manufacturer" id="manf">
+                <div *ngIf="submitted && addVehicle.controls['manf'].errors" class="error">
+                    <div class="text-danger" *ngIf="addVehicle.controls['manf'].errors['required']">Manufacturer is required
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="ch_no" class="form-label">Chasis No:</label>
+                <input type="text" class="form-control" formControlName="ch_no" [(ngModel)]="vehicle.chasis_no" id="ch_no">
+                <div *ngIf="submitted && addVehicle.controls['ch_no'].errors" class="error">
+                    <div class="text-danger" *ngIf="addVehicle.controls['ch_no'].errors['required']">Chasis no. is required
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="eng_no" class="form-label">Engine No:</label>
+                <input type="text" class="form-control" formControlName="eng_no" [(ngModel)]="vehicle.engine_no"
+                    id="eng_no">
+                <div *ngIf="submitted && addVehicle.controls['eng_no'].errors" class="error">
+                    <div class="text-danger" *ngIf="addVehicle.controls['eng_no'].errors['required']">Engine no. is
+                        required</div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="li_no" class="form-label">License No:</label>
+                <input type="text" class="form-control" formControlName="li_no" [(ngModel)]="vehicle.license_no" id="li_no">
+                <div *ngIf="submitted && addVehicle.controls['li_no'].errors" class="error">
+                    <div class="text-danger" *ngIf="addVehicle.controls['li_no'].errors['required']">License no: is
+                        required</div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="pur_date" class="form-label">Purchase Date</label>
+                <input type="date" class="form-control" formControlName="pur_date" [(ngModel)]="vehicle.purchase_date"
+                    id="pur_date">
+                <div *ngIf="submitted && addVehicle.controls['pur_date'].errors" class="error">
+                    <div class="text-danger" *ngIf="addVehicle.controls['pur_date'].errors['required']">Purchase date is
+                        required</div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="pur_price" class="form-label">Purchase price</label>
+                <input type="number" class="form-control" formControlName="pur_price" [(ngModel)]="vehicle.purchase_price" id="pur_price">
+                <div *ngIf="submitted && addVehicle.controls['pur_price'].errors" class="error">
+                    <div class="text-danger" *ngIf="addVehicle.controls['pur_price'].errors['required']">Purchase price is
+                        required</div>
+                        <div class="text-danger" *ngIf="addVehicle.controls['pur_price'].errors['min']">Purchase price is
+                            invalid</div>
+                        </div>
+                    
+            </div>
+            <button type="submit" class="btn btn-primary my-4">Get premium</button>
+            <div *ngIf="getPremium">
+                <div class="text" >Insurance value is <strong>Rs. {{result[1]}}</strong></div>
+                <div class="text" >Premium per year for {{duration}} year(s) is <strong>Rs. {{result[0]}}</strong></div>
+                <div class="text"> Total Premium: <strong>Rs. {{result[0]*duration}}</strong></div>
+                <button class="btn btn-outline-primary my-2" (click)="makePayment(result[0]*duration)">Make Payment</button>
+            </div>
+        </form>
+    </div>
+</div>

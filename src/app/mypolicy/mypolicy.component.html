@@ -1,0 +1,50 @@
+<app-header></app-header>
+
+<div class="content my-4 shadow-sm p-3 mb-5 bg-white rounded">
+    <h3>Policy List</h3>
+    <div class="my-4">
+        <ul class="list-group " *ngFor="let i of uins">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <div class="ms-2 me-auto">
+                    <div><span class="" style="font-size: 0.9rem; color: #94a3b8; "><i>Policy No: </i></span>
+                        <span class="fw-bold">{{i.policy_no}}</span>
+                    </div>
+                    <span class="" style="font-size: 0.9rem; color: #94a3b8;"><i>Duration: </i></span> {{i.duration}}
+                    year(s)
+                    <div>
+                        <span class="" style="font-size: 0.9rem; color: #94a3b8;"><i>Vehicle No: </i></span>
+                        {{i.vehicleIns.reg_no}}
+                    </div>
+                </div>
+                <span class="">
+                    <button *ngIf="!verifyPolicyDuration(i) || !FullyClaimed(i.claimed_status)" class="mx-1 btn btn-outline-success" (click)="open(claim)">
+                        Claim
+                    </button>
+                    <ng-template #claim let-modal>
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="modal-basic-title">Claim</h4>
+                            <button type="button" class="btn-close" aria-label="Close"
+                                (click)="modal.dismiss('Cross click')"></button>
+                        </div>
+                        <div class="modal-body">
+                            <app-claim [policy]=i></app-claim>
+                        </div>
+                    </ng-template>
+                    <button *ngIf="verifyPolicyDuration(i) || !FullyClaimed(i.claimed_status)" class="btn btn-outline-danger" (click)="open(renew)">
+                        Renew
+                    </button>
+                    <ng-template #renew let-modal>
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="modal-basic-title">Renew</h4>
+                            <button type="button" class="btn-close" aria-label="Close"
+                                (click)="modal.dismiss('Cross click')"></button>
+                        </div>
+                        <div class="modal-body">
+                            <app-renew [policy] = i></app-renew>
+                        </div>
+                    </ng-template>
+                </span>
+            </li>
+        </ul>
+    </div>
+</div>

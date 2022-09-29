@@ -1,0 +1,31 @@
+<app-header></app-header>
+<div class="container my-5">
+    <div class="content ">
+        <table class="table shadow p-3 mb-5 bg-white rounded "  >
+            <thead class = "bg-dark">
+              <tr class = "text-light">
+                <th scope = "col">Policy No</th>
+                <th scope="col">Claim No</th>
+                <th scope="col">Date</th>
+                <th scope ="col">Reason</th>
+                <th scope="col">Status</th>
+                <th scope="col">Amount</th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let ins of insurance">
+         
+              <tr *ngFor = "let c of ins.claimIns">
+                <td>{{ins.policy_no}}</td>
+                <td>{{c.claim_id}}</td>
+                <td>{{c.claim_date}}</td>
+                <td>{{c.reason}}</td>
+                <td>{{c.claim_status}}</td>
+                <td>{{c.amount}}</td>
+              </tr>
+        
+            </tbody>
+          </table>
+    </div>
+</div>
+
+

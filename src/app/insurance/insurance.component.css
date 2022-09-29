@@ -1,0 +1,25 @@
+.content{
+    
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+}
+
+
+.feature{
+    justify-content: space-between;
+    border-radius: 10px;
+    box-sizing: border-box;
+    transition: 0.5s;
+    background: #f1f1f1;
+    color: #0f75bd;
+    padding: 20px;
+}
+.feature:hover{
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.2);
+}
+
+.deets{
+    color: #768089;
+}
+

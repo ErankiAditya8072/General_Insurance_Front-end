@@ -1,0 +1,59 @@
+<div class="modal-body">
+    <form [formGroup]="addUser" (ngSubmit)="onSignup()">
+        <div class="mb-3">
+            <label for="uname" class="form-label">Name</label>
+            <input type="text" class="form-control" formControlName="uname" [(ngModel)]="user.name" id="uname">
+            <div *ngIf="submitted && addUser.controls['uname'].errors"
+                class="error">
+                <div class="text-danger" *ngIf="addUser.controls['uname'].errors['required']">Name is required</div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="text" class="form-control" formControlName="email" [(ngModel)]="user.email" id="email">
+            <div *ngIf="submitted && addUser.controls['email'].errors"
+                class="error">
+                <div class="text-danger" *ngIf="addUser.controls['email'].errors['required']">Email is required</div>
+                <div class="text-danger" *ngIf="addUser.controls['email'].errors['pattern']">Email is invalid</div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="pwd" class="form-label">Password</label>
+            <input type="password" class="form-control" formControlName="pwd" [(ngModel)]="user.password" id="pwd">
+            <div *ngIf="submitted && addUser.controls['pwd'].errors"
+                class="error">
+                <div class="text-danger" *ngIf="addUser.controls['pwd'].errors['required']">Password is required</div>
+                <div class="text-danger" *ngIf="addUser.controls['pwd'].errors['minLength']">Password must be at least 6 characters</div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="contact" class="form-label">Contact</label>
+            <input type="number" class="form-control" formControlName="contact" [(ngModel)]="user.contact" id="contact">
+            <div *ngIf="submitted && addUser.controls['contact'].errors"
+                class="error">
+                <div class="text-danger" *ngIf="addUser.controls['contact'].errors['required']">Contact is required</div>
+                <div class="text-danger"
+                    *ngIf="addUser.controls['contact'].errors['minLength'] || addUser.controls['contact'].errors['maxLength'] ">
+                    Contact no. should be of length 10</div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="addr" class="form-label">Address</label>
+            <input type="text" class="form-control" formControlName="addr" [(ngModel)]="user.address" id="addr">
+            <div *ngIf="submitted && addUser.controls['addr'].errors"
+                class="error">
+                <div class="text-danger" *ngIf="addUser.controls['addr'].errors['required']">Address is required</div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="dob" class="form-label">DOB</label>
+            <input type="date" class="form-control" formControlName="dob" [(ngModel)]="user.dob" id="dob">
+            <div *ngIf="submitted && addUser.controls['dob'].errors"
+                class="error">
+                <div class="text-danger" *ngIf="addUser.controls['dob'].errors['required']">DOB is required</div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Signup</button>
+        <div class="text-success" *ngIf="signedUp">User registered successfully!</div>
+    </form>
+</div>

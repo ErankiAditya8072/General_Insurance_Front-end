@@ -1,0 +1,29 @@
+<mat-drawer-container>
+    <mat-drawer mode="side" [opened]="sideBarOpen">
+        <app-admin-sidenav></app-admin-sidenav>
+    </mat-drawer>
+    <mat-drawer-content>
+        <app-admin-header (toggleSidebarForMe)="sideBarToggler()"></app-admin-header>
+        <router-outlet></router-outlet>
+        <div class="container-fluid page">
+            <div class="d-flex page__box p-3 mt-2">Users</div>
+            <div class="page__content shadow p-3 position-relative" >
+              
+              <ul class="list-group" *ngFor="let u of user">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <div class="ms-2 me-auto">
+                    <div class = "text-capitalize" ><span class="fw-bold " style="font-size: 1rem !important;" >Name:</span> {{u.name}}</div>
+  
+                       <div><span class="fw-bold" style="font-size: 1rem !important;">Email:</span> {{u.email}}</div>
+                       <div><span class="fw-bold" style="font-size: 1rem !important;">Contact:</span> {{u.contact}}</div>
+                                    
+                  </div>
+               
+                </li>
+              </ul>
+            
+            </div>
+          </div>
+    </mat-drawer-content>
+</mat-drawer-container>
+

@@ -1,0 +1,47 @@
+<app-header></app-header>
+
+<div class="container my-5 ">
+    <div class="content shadow p-3 mb-5 bg-white rounded">
+        <form [formGroup]="p_cal" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+                <label for="pur_price" class="form-label">Purchase price</label>
+                <input type="number" class="form-control" formControlName="pur_price" id="pur_price">
+                <div *ngIf="submitted && p_cal.controls['pur_price'].errors" class="error">
+                    <div class="text-danger" *ngIf="p_cal.controls['pur_price'].errors['required']">Purchase price is
+                        required</div>
+                    <div class="text-danger" *ngIf="p_cal.controls['pur_price'].errors['min']">Purchase price
+                        should be greater than or equal to Rs. 50,000
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="pur_date" class="form-label">Purchase Date</label>
+                <input type="date" class="form-control" formControlName="pur_date"
+                    id="pur_date">
+                <div *ngIf="submitted && p_cal.controls['pur_date'].errors" class="error">
+                    <div class="text-danger" *ngIf="p_cal.controls['pur_date'].errors['required']">Purchase date is
+                        required</div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="reason" class="form-label">Policy Duration: </label>
+                <select class="form-select" aria-label="Default select example" formControlName="duration"
+                    id="duration">
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+                <div *ngIf="submitted && p_cal.controls['duration'].errors" class="error">
+                    <div class="text-danger" *ngIf="p_cal.controls['duration'].errors['required']">Duration is
+                        required</div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Get Premium</button>
+            <div *ngIf="getPremium">
+                <div class="text">Insurance value is <strong>Rs. {{result[1]}}</strong></div>
+                <div class="text">Premium per year for {{duration}} year(s) is <strong>Rs. {{result[0]}}</strong></div>
+                <div class="text"> Total Premium: <strong>Rs. {{result[0]*duration}}</strong></div>
+            </div>
+        </form>
+    </div>
+</div>

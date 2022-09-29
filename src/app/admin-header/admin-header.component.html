@@ -1,0 +1,52 @@
+<mat-toolbar>
+  <mat-toolbar-row class="justify-content-between my-2">
+    <button mat-icon-button (click)="toggleSidebar()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <div class="row mr-2 ml-auto">
+      <ul class="row m-0 align-items-center">
+        <li *ngIf="!this.storage.retrieve('isAdminLoggedIn')">
+          <button class="btn btn-outline-primary" (click)="open(login)" >Login</button>
+        </li>
+        <li *ngIf="this.storage.retrieve('isAdminLoggedIn')">
+          <button mat-button (click)="open(logout)" class="user mt-2 d-flex align-items-center">
+            <img src="./assets/admin.jpg" alt="" class="user-image mr-1 p-2" />
+
+            {{this.storage.retrieve('a_id')}}
+            <mat-icon class="user-image-icon ml-1">keyboard_arrow_down</mat-icon>
+          </button>
+          
+        </li>
+      </ul>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<ng-template #login let-modal >
+  <form [formGroup]="validateAdmin" class="p-3" (ngSubmit)="onLogin()">
+    <div class="mb-3">
+        <label for="l_id" class="form-label">Admin Id:</label>
+        <input type="number" class="form-control" formControlName="l_id" [(ngModel)]="admin.admin_id"
+            id="l_id">
+        <div *ngIf="submitted && validateAdmin.controls['l_id'].errors" class="error">
+            <div class="text-danger" *ngIf="validateAdmin.controls['l_id'].errors['required']">Id is
+                required</div>
+
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="l_pwd" class="form-label">Password</label>
+        <input type="password" class="form-control" formControlName="l_pwd" [(ngModel)]="admin.password"
+            id="l_pwd">
+        <div *ngIf="submitted && validateAdmin.controls['l_pwd'].errors" class="error">
+            <div class="text-danger" *ngIf="validateAdmin.controls['l_pwd'].errors['required']">Password is
+                required</div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-outline-primary log-btn">Submit</button>
+</form>
+</ng-template>
+
+<ng-template #logout let-modal style="width: 300px;">
+  <button class="btn btn-outline-primary" type="submit" (click)="onlogout()">Logout</button>
+</ng-template>

@@ -1,0 +1,242 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "dhruv",
+      "email": "abc@gmail.com",
+      "pwd": "abc12345",
+      "contact": 1234567890,
+      "addr": "Mumbai",
+      "dob": "28/10/2000"
+    },
+    {
+      "name": "anand",
+      "email": "anand@gmail.com",
+      "pwd": "12345678",
+      "contact": "1234567890",
+      "addr": "Mumbai",
+      "dob": "2000-08-11",
+      "id": 2
+    },
+    {
+      "name": "dhruv",
+      "email": "dhruv@gmail.com",
+      "pwd": "dhruv2811",
+      "contact": "1234567890",
+      "addr": "Mumbai",
+      "dob": "2000-08-11",
+      "id": 3
+    },
+    {
+      "name": "dhruv",
+      "email": "d@gmail.com",
+      "pwd": "12345678",
+      "contact": "1234567890",
+      "addr": "Mumbai",
+      "dob": "2021-12-28",
+      "id": 4
+    },
+    {
+      "name": "shubh",
+      "email": "shubham@gmail.com",
+      "password": "123",
+      "contact": 123,
+      "address": "mumbai",
+      "dob": "2000-11-26",
+      "id": 5,
+      "insurance": [
+        {
+          "vehicleIns": {
+            "reg_no": "MH06AZ2323",
+            "model": "z16",
+            "manf": "honda",
+            "ch_no": "ad322es",
+            "eng_no": "23rs2323",
+            "li_no": "TSada23542",
+            "pur_date": "2021-10-01",
+            "pur_price": 100000
+          },
+          "duration": 2,
+          "start_date": "2021-09-27",
+          "premium_amount": 1614,
+          "user": "shubham@gmail.com",
+          "policy_no": 11113,
+          "insurance_value": 185000,
+          "claimed_amount": 0,
+          "id": 3,
+          "claimIns": {
+            "claim_id": 10,
+            "claim_date": "2022-09-28",
+            "claim_status": "pending",
+            "amount": 0,
+            "reason": "accident"
+          }
+        },
+        {
+          "vehicleIns": {
+            "reg_no": "MH06AZ2323",
+            "model": "z16",
+            "manf": "honda",
+            "ch_no": "ad322es",
+            "eng_no": "23rs2323",
+            "li_no": "TSada23542",
+            "pur_date": "2021-10-01",
+            "pur_price": 100000
+          },
+          "duration": 2,
+          "start_date": "2020-09-27",
+          "premium_amount": 1614,
+          "user": "shubham@gmail.com",
+          "policy_no": 11114,
+          "insurance_value": 185000,
+          "claimed_amount": 0,
+          "id": 4,
+          "claimIns": {
+            "claim_id": 12,
+            "claim_date": "2022-09-28",
+            "claim_status": "pending",
+            "amount": 0,
+            "reason": "theft"
+          }
+        }
+      ]
+    },
+    {
+      "name": "dhru",
+      "email": "dhrup@gmail.com",
+      "pwd": "123",
+      "contact": 123,
+      "addr": "mumbai",
+      "dob": "2000-06-18",
+      "id": 6
+    },
+    {
+      "name": "abhi",
+      "email": "abhi@gmail.com",
+      "pwd": "123",
+      "contact": 1234567890,
+      "addr": "mumbai",
+      "dob": "2001-04-20",
+      "id": 7
+    },
+    {
+      "name": "he",
+      "email": "h@g.com",
+      "pwd": "123",
+      "contact": 123,
+      "addr": "m",
+      "dob": "2000-11-11",
+      "id": 8
+    },
+    {
+      "name": "aditya",
+      "email": "adit@gmail.com",
+      "pwd": "123",
+      "contact": 1234567890,
+      "addr": "pune",
+      "dob": "2000-11-11",
+      "id": 9
+    }
+  ],
+  "vehicle": [
+    {
+      "reg_no": "MH06AZ2323",
+      "model": "z16",
+      "manf": "honda",
+      "ch_no": "ad322es",
+      "eng_no": "23rs2323",
+      "li_no": "TSada23542",
+      "pur_date": "2021-10-01",
+      "pur_price": 100000,
+      "id": 1
+    }
+  ],
+  "insurance": [
+    {
+      "vehicleIns": {
+        "reg_no": "MH06AZ2323",
+        "model": "z16",
+        "manf": "honda",
+        "ch_no": "ad322es",
+        "eng_no": "23rs2323",
+        "li_no": "TSada23542",
+        "pur_date": "2021-10-01",
+        "pur_price": 100000
+      },
+      "duration": 2,
+      "start_date": "2021-09-27",
+      "premium_amount": 1614,
+      "user": "shubham@gmail.com",
+      "policy_no": 11113,
+      "insurance_value": 185000,
+      "claimed_amount": 0,
+      "id": 3,
+      "claimIns": {
+        "claim_id": 10,
+        "claim_date": "2022-09-28",
+        "claim_status": "pending",
+        "amount": 0,
+        "reason": "accident"
+      }
+    },
+    {
+      "vehicleIns": {
+        "reg_no": "MH06AZ2323",
+        "model": "z16",
+        "manf": "honda",
+        "ch_no": "ad322es",
+        "eng_no": "23rs2323",
+        "li_no": "TSada23542",
+        "pur_date": "2021-10-01",
+        "pur_price": 100000
+      },
+      "duration": 2,
+      "start_date": "2020-09-27",
+      "premium_amount": 1614,
+      "user": "shubham@gmail.com",
+      "policy_no": 11114,
+      "insurance_value": 185000,
+      "claimed_amount": 0,
+      "id": 4,
+      "claimIns": {
+        "claim_id": 12,
+        "claim_date": "2022-09-28",
+        "claim_status": "pending",
+        "amount": 0,
+        "reason": "theft"
+      }
+    }
+  ],
+  "admin": [
+    {
+      "admin_id": 1111,
+      "password": 123
+    }
+  ],
+  "claim": [
+    {
+      "claim_id": 10,
+      "claim_date": "2022-09-28",
+      "claim_status": "pending",
+      "amount": 0,
+      "reason": "accident",
+      "id": 1
+    },
+    {
+      "claim_id": 12,
+      "claim_date": "2022-09-28",
+      "claim_status": "pending",
+      "amount": 0,
+      "reason": "theft",
+      "id": 2
+    },
+    {
+      "reason": "accident",
+      "claim_date": "2022-09-28",
+      "claim_id": 1001,
+      "claim_status": "pending",
+      "amount": 0,
+      "id": 3
+    }
+  ]
+}

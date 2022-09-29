@@ -1,0 +1,40 @@
+
+
+#branding{
+    color: #0f75bd;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+
+.site-title{
+    font-size: 22px;
+}
+
+.description{
+    font-size: 14px;
+}
+
+.cover{
+    position: relative;
+    background: url("../../assets/bgimg.jpg") no-repeat ;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    min-height: 450px;
+}
+
+.slide-content{
+    position: absolute;
+    left: 12%;
+    top:15%;
+    width: 300px;
+    
+    background-color: white;
+    font-weight: 300;
+    border-radius: 5px;
+}
+
+.feature{
+    color: #0f75bd;
+}
